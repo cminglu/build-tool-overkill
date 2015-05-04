@@ -1,13 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'jacoco'
+apply plugin: 'maven-publish'
 
-sourceCompatibility = 1.5
+group = 'nl.hannoembregts'
 version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
-    }
-}
+sourceCompatibility = 1.7
 
 repositories {
     mavenCentral()
@@ -22,10 +20,4 @@ test {
     systemProperties 'property': 'value'
 }
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
-}
+jacocoTestReport.dependsOn test
