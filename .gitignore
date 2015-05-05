@@ -16,3 +16,6 @@ hs_err_pid*
 /.settings
 /bin
 /target
+/antBuild
+/dist
+/lib
